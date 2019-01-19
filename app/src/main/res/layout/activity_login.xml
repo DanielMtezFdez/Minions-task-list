@@ -45,6 +45,7 @@
             android:layout_height="wrap_content">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/usuario"
@@ -64,6 +65,7 @@
             android:layout_below="@id/usuario">
 
             <android.support.design.widget.TextInputEditText
+                android:id="@+id/pw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/pass"
@@ -87,9 +89,10 @@
         android:layout_marginTop="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/boton"
         android:textColor="@android:color/white"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:onClick="accederApp"/>
 
     <TextView
         android:id="@+id/cuentaNueva"
@@ -99,6 +102,7 @@
         android:textSize="20sp"
         android:layout_below="@id/botonLogin"
         android:textStyle="bold"
-        style="@style/etiquetas"/>
+        style="@style/etiquetas"
+        android:onClick="crearCuenta"/>
 
 </RelativeLayout>
