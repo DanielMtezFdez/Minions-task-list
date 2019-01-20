@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,9 @@ public class Login extends AppCompatActivity {
     }
 
     public void crearCuenta(View view){
+
         Toast toast = Toast.makeText(this, "Funcionalidad no disponible", Toast.LENGTH_SHORT);
+
         toast.show();
     }
 
@@ -45,4 +48,5 @@ public class Login extends AppCompatActivity {
             toast.show();
         }
     }
+
 }
