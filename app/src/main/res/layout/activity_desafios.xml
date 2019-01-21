@@ -1,12 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:columnCount="2"
-    android:rowCount="4"
+    android:stretchColumns="*"
     tools:context=".DesafiosActivity">
 
+    <TableRow
+        style="@style/desafioRow">
 
-</RelativeLayout>
+        <RelativeLayout>
+
+            <ImageView
+                android:id="@+id/starDesafio1"
+                android:src="@mipmap/star_gris"
+                style="@style/desafioImagen"/>
+
+            <TextView
+                android:id="@+id/desafio1"
+                android:layout_below="@+id/starDesafio1"
+                android:text="5 tareas completas"
+                style="@style/desafioTitulo"/>
+
+            <!-- Esto arranca -->
+            <TextView
+                android:id="@+id/textoDesafio1"
+                android:layout_below="@+id/desafio1"
+                android:text="@string/desafiosTexto"
+                style="@style/desafioTexto"/>
+        </RelativeLayout>
+
+        <RelativeLayout>
+
+            <ImageView
+                android:id="@+id/starDesafio2"
+                android:src="@mipmap/star_gris"
+                style="@style/desafioImagen"/>
+
+            <TextView
+                android:id="@+id/desafio2"
+                android:layout_below="@+id/starDesafio2"
+                android:text="20 tareas completas"
+                style="@style/desafioTitulo"/>
+
+            <!-- Cumpliendo objetivos -->
+            <TextView
+                android:id="@+id/textoDesafio2"
+                android:layout_below="@+id/desafio2"
+                android:text="@string/desafiosTexto"
+                style="@style/desafioTexto"/>
+        </RelativeLayout>
+
+    </TableRow>
+
+    <TableRow
+        style="@style/desafioRow">
+
+        <RelativeLayout>
+            <ImageView
+                android:id="@+id/starDesafio3"
+                android:src="@mipmap/star_gris"
+                style="@style/desafioImagen"/>
+
+            <TextView
+                android:id="@+id/desafio3"
+                android:text="50 tareas completas"
+                android:layout_below="@+id/starDesafio3"
+                style="@style/desafioTitulo"/>
+
+            <!-- Me estoy aficionando a esto -->
+            <TextView
+                android:id="@+id/textoDesafio3"
+                android:text="@string/desafiosTexto"
+                android:layout_below="@+id/desafio3"
+                style="@style/desafioTexto"/>
+        </RelativeLayout>
+
+        <RelativeLayout>
+            <ImageView
+                android:id="@+id/starDesafio4"
+                android:src="@mipmap/star_gris"
+                style="@style/desafioImagen"/>
+
+            <TextView
+                android:id="@+id/desafio4"
+                android:text="100 tareas completas"
+                android:layout_below="@+id/starDesafio4"
+                style="@style/desafioTitulo"/>
+
+            <!-- Pues sí que hacemos bien las cosas -->
+            <TextView
+                android:id="@+id/textoDesafio4"
+                android:text="@string/desafiosTexto"
+                android:layout_below="@+id/desafio4"
+                android:textAlignment="center"
+                style="@style/desafioTexto"/>
+        </RelativeLayout>
+
+    </TableRow>
+
+    <TableRow
+        style="@style/desafioRow">
+
+        <RelativeLayout>
+            <ImageView
+                android:id="@+id/starDesafio5"
+                android:src="@mipmap/star_gris"
+                style="@style/desafioImagen"/>
+
+            <TextView
+                android:id="@+id/desafio5"
+                android:text="500 tareas completas"
+                android:layout_below="@+id/starDesafio5"
+                style="@style/desafioTitulo"/>
+
+            <!-- Ya somos parte de tu vida -->
+            <TextView
+                android:id="@+id/textoDesafio5"
+                android:text="@string/desafiosTexto"
+                android:layout_below="@+id/desafio5"
+                style="@style/desafioTexto"/>
+        </RelativeLayout>
+
+        <RelativeLayout>
+            <ImageView
+                android:id="@+id/starDesafio6"
+                android:src="@mipmap/star_gris"
+                style="@style/desafioImagen"/>
+
+            <TextView
+                android:id="@+id/desafio6"
+                android:text="1000 tareas completas"
+                android:layout_below="@+id/starDesafio6"
+                style="@style/desafioTitulo"/>
+
+            <!-- Qué haces todavía aquí? -->
+            <TextView
+                android:id="@+id/textoDesafio6"
+                android:text="@string/desafiosTexto"
+                android:layout_below="@+id/desafio6"
+                style="@style/desafioTexto" />
+        </RelativeLayout>
+
+    </TableRow>
+
+
+</TableLayout>

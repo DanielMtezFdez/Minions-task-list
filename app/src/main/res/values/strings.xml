@@ -7,4 +7,11 @@
     <string name="pass">Contraseña</string>
     <string name="crear_cuenta_nueva">Crear cuenta nueva</string>
     <string name="hecho">Hecho</string>
+    <string name="desafiosTexto">\??????</string>
+    <string name="desafio1">Esto arranca</string>
+    <string name="desafio2">Cumpliendo objetivos</string>
+    <string name="desafio3">Me estoy aficionando a esto</string>
+    <string name="desafio4">Pues sí que hacemos bien las cosas</string>
+    <string name="desafio5">Ya somos parte de tu vida</string>
+    <string name="desafio6">¿Qué haces todavía aquí?</string>
 </resources>

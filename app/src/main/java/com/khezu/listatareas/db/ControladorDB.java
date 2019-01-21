@@ -16,6 +16,7 @@ public class ControladorDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE TAREAS (ID INTEGER PRIMARY KEY AUTOINCREMENT, TAREA TEXT NOT NULL);");
+        db.execSQL("CREATE TABLE TAREAS_COMPLETAS (ID PRIMARY KEY AUTOINCREMENT, TAREA_COMPLETA TEXT NOT NULL);");
     }
 
     @Override
@@ -25,7 +26,7 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     public void insertarTarea(String tarea){
         ContentValues registro = new ContentValues();
-        registro.put("NOMBRE", tarea);
+        registro.put("TAREA", tarea);
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert("TAREAS", null, registro);
         db.close();
@@ -33,7 +34,7 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     public String[] obtenerTareas(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT NOMBRE FROM TAREAS", null);
+        Cursor cursor = db.rawQuery("SELECT TAREA FROM TAREAS", null);
         int numRegistros = cursor.getCount();
         if(numRegistros==0){
             db.close();
@@ -52,26 +53,33 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     public int contabilizarRegistros(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT NOMBRE FROM TAREAS", null);
+        Cursor cursor = db.rawQuery("SELECT TAREA FROM TAREAS", null);
         db.close();
         return cursor.getCount();
     }
 
     public void borrarTarea(String tarea){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete("TAREAS", "NOMBRE = ?", new String[]{tarea});
+        db.delete("TAREAS", "TAREA = ?", new String[]{tarea});
+        db.close();
+        insertarTareaCompleta(tarea);
+    }
+
+    //Desafíos
+    public void insertarTareaCompleta(String tarea){
+        ContentValues registro = new ContentValues();
+        registro.put("TAREA_COMPLETA", tarea);
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.insert("TAREAS_COMPLETAS", null, registro);
         db.close();
     }
 
-
-
-
-    //Métodos para los desafíos
-    public void obtenerNumeroTareasCompletas(){
-
+    public int comprobarTareasCompletas(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM TAREAS_COMPLETAS", null);
+        int registrosTotales = cursor.getCount();
+        db.close();
+        return registrosTotales;
     }
 
-    public void actualizarNumeroTareasCompletas(){
-
-    }
 }
