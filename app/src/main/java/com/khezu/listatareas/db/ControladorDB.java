@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class ControladorDB extends SQLiteOpenHelper {
 
 
@@ -15,8 +17,8 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE TAREAS (ID INTEGER PRIMARY KEY AUTOINCREMENT, TAREA TEXT NOT NULL);");
-        db.execSQL("CREATE TABLE TAREAS_COMPLETAS (ID PRIMARY KEY AUTOINCREMENT, TAREA_COMPLETA TEXT NOT NULL);");
+        db.execSQL("CREATE TABLE TAREAS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE TEXT NOT NULL);");
+        db.execSQL("CREATE TABLE TAREAS_COMPLETAS (ID INTEGER PRIMARY KEY AUTOINCREMENT, TAREA_COMPLETA TEXT NOT NULL);");
     }
 
     @Override
@@ -26,24 +28,25 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     public void insertarTarea(String tarea){
         ContentValues registro = new ContentValues();
-        registro.put("TAREA", tarea);
+        registro.put("NOMBRE", tarea);
         SQLiteDatabase db = this.getWritableDatabase();
         db.insert("TAREAS", null, registro);
         db.close();
     }
 
-    public String[] obtenerTareas(){
+    public ArrayList<String> obtenerTareas(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT TAREA FROM TAREAS", null);
-        int numRegistros = cursor.getCount();
-        if(numRegistros==0){
+
+        Cursor cursor = db.rawQuery("SELECT * FROM TAREAS", null);
+        int regs = cursor.getCount();
+        if(regs==0){
             db.close();
             return null;
         } else {
+            ArrayList<String> tareas = new ArrayList<>();
             cursor.moveToFirst();
-            String[] tareas =  new String[numRegistros];
-            for (int i = 0; i < numRegistros; i++) {
-                tareas[i] = cursor.getString(i);
+            for (int i = 0; i < regs; i++) {
+                tareas.add(cursor.getString(1));
                 cursor.moveToNext();
             }
             db.close();
@@ -53,16 +56,16 @@ public class ControladorDB extends SQLiteOpenHelper {
 
     public int contabilizarRegistros(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT TAREA FROM TAREAS", null);
-        db.close();
+        Cursor cursor = db.rawQuery("SELECT * FROM TAREAS", null);
         return cursor.getCount();
     }
 
     public void borrarTarea(String tarea){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete("TAREAS", "TAREA = ?", new String[]{tarea});
-        db.close();
+        db.delete("TAREAS", "NOMBRE = ?", new String[]{tarea});
         insertarTareaCompleta(tarea);
+        db.close();
+
     }
 
     //Desafíos

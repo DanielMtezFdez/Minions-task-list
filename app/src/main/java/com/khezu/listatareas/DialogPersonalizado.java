@@ -10,11 +10,12 @@ public class DialogPersonalizado extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
+
         builder.setView(inflater.inflate(R.layout.desafio_completo, null))
-                .setPositiveButton("Aceptar", null);
+            .setPositiveButton("Aceptar", null);
         return builder.create();
     }
 }

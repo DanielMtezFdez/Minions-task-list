@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tarea"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
         android:textSize="20sp"
-        android:layout_alignBaseline="@+id/botonDone" />
+        android:layout_alignBaseline="@+id/botonDone"
+        android:layout_marginRight="100dp"
+        android:textColor="@android:color/black"/>
 
     <Button
         android:id="@+id/botonDone"
@@ -18,6 +22,9 @@
         android:layout_height="wrap_content"
         android:text="@string/hecho"
         android:layout_alignParentRight="true"
-        android:onClick="borrarTarea"/>
+        android:onClick="borrarTarea"
+        android:background="@color/colorAccent"
+        android:alpha="0.7"
+        android:textColor="@android:color/white"/>
 
 </RelativeLayout>

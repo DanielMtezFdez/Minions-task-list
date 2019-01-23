@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tituloDesafioCompleto"
@@ -14,15 +15,17 @@
         android:textAllCaps="true"
         android:textAlignment="center"
         android:textSize="30sp"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/colorAccent"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
         />
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/unicornioDesafio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/desafios"
         android:layout_below="@+id/tituloDesafioCompleto"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
 
 </RelativeLayout>
