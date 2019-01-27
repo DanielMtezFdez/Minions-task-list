@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/toastLayout"
+    android:background="@drawable/toast_redondo"
+    android:padding="5dp" >
+
+    <ImageView
+        android:id="@+id/imagenToast"
+        android:layout_marginLeft="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/toast_imagen"/>
+
+    <TextView
+        android:id="@+id/textoToast"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:text="@string/tarea_completa"
+        android:layout_toRightOf="@+id/imagenToast"/>
+</RelativeLayout>

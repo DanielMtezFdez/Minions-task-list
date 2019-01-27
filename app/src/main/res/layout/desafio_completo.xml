@@ -11,11 +11,11 @@
         android:id="@+id/tituloDesafioCompleto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Desafío completo"
+        android:text="@string/desafio_completo"
         android:textAllCaps="true"
         android:textAlignment="center"
         android:textSize="30sp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimary"
         android:textColor="@android:color/white"
         />
 
@@ -27,5 +27,16 @@
         android:layout_below="@+id/tituloDesafioCompleto"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/desafiosCompletosDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/unicornioDesafio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/texto_dialog_desafio"
+        android:textColor="@color/colorDivider"
+        android:textSize="15sp" />
 
 </RelativeLayout>

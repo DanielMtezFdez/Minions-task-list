@@ -14,4 +14,15 @@
     <string name="desafio4">Pues sí que hacemos bien las cosas</string>
     <string name="desafio5">Ya somos parte de tu vida</string>
     <string name="desafio6">¿Qué haces todavía aquí?</string>
+    <string name="desafio_completo">Desafío completo</string>
+    <string name="_5_tareas_completas">5 tareas completas</string>
+    <string name="_20_tareas_completas">20 tareas completas</string>
+    <string name="_50_tareas_completas">50 tareas completas</string>
+    <string name="_100_tareas_completas">100 tareas completas</string>
+    <string name="_500_tareas_completas">500 tareas completas</string>
+    <string name="_1000_tareas_completas">1000 tareas completas</string>
+    <string name="login">Login</string>
+    <string name="texto_dialog_desafio">Revisa tu ventana de desafíos</string>
+    <string name="en_blanco" />
+    <string name="tarea_completa">Tarea completa</string>
 </resources>

@@ -7,9 +7,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -96,22 +98,24 @@ public class MainActivity extends AppCompatActivity {
         View parent = (View) view.getParent();
         TextView tarea = (TextView) parent.findViewById(R.id.tarea);
         controladorDB.borrarTarea(tarea.getText().toString());
-        Toast.makeText(this, "Tarea completa", Toast.LENGTH_SHORT).show();
+        Toast toast = new Toast(getApplicationContext());
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.toast_layout,
+                (ViewGroup)findViewById(R.id.toastLayout));
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
         actualizarUI();
         notificacionDesafío();
     }
 
     public void notificacionDesafío() {
 
-
         int tareasCompletas = controladorDB.comprobarTareasCompletas();
         if(tareasCompletas == 5 || tareasCompletas == 20 || tareasCompletas == 50 || tareasCompletas == 100 || tareasCompletas == 500 || tareasCompletas == 1000){
-
             FragmentManager fragmentManager = getSupportFragmentManager();
             final DialogPersonalizado notificacion = new DialogPersonalizado();
             notificacion.show(fragmentManager, "notificacion");
-
-
         }
     }
 

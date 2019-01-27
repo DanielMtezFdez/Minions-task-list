@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:stretchColumns="*"
-    tools:context=".MainActivityActivity">
+    tools:context=".MainActivity">
 
     <TableRow
         style="@style/desafioRow">
@@ -20,7 +20,7 @@
             <TextView
                 android:id="@+id/desafio1"
                 android:layout_below="@+id/starDesafio1"
-                android:text="5 tareas completas"
+                android:text="@string/_5_tareas_completas"
                 style="@style/desafioTitulo"/>
 
             <!-- Esto arranca -->
@@ -41,7 +41,7 @@
             <TextView
                 android:id="@+id/desafio2"
                 android:layout_below="@+id/starDesafio2"
-                android:text="20 tareas completas"
+                android:text="@string/_20_tareas_completas"
                 style="@style/desafioTitulo"/>
 
             <!-- Cumpliendo objetivos -->
@@ -65,7 +65,7 @@
 
             <TextView
                 android:id="@+id/desafio3"
-                android:text="50 tareas completas"
+                android:text="@string/_50_tareas_completas"
                 android:layout_below="@+id/starDesafio3"
                 style="@style/desafioTitulo"/>
 
@@ -85,7 +85,7 @@
 
             <TextView
                 android:id="@+id/desafio4"
-                android:text="100 tareas completas"
+                android:text="@string/_100_tareas_completas"
                 android:layout_below="@+id/starDesafio4"
                 style="@style/desafioTitulo"/>
 
@@ -111,7 +111,7 @@
 
             <TextView
                 android:id="@+id/desafio5"
-                android:text="500 tareas completas"
+                android:text="@string/_500_tareas_completas"
                 android:layout_below="@+id/starDesafio5"
                 style="@style/desafioTitulo"/>
 
@@ -131,7 +131,7 @@
 
             <TextView
                 android:id="@+id/desafio6"
-                android:text="1000 tareas completas"
+                android:text="@string/_1000_tareas_completas"
                 android:layout_below="@+id/starDesafio6"
                 style="@style/desafioTitulo"/>
 

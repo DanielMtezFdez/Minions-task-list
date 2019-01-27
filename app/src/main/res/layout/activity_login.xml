@@ -83,7 +83,7 @@
         android:id="@+id/botonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/login"
         android:layout_below="@id/cajaBlanca"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"

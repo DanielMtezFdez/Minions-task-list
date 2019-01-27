@@ -10,21 +10,21 @@
         android:id="@+id/tarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="@string/en_blanco"
         android:textSize="20sp"
         android:layout_alignBaseline="@+id/botonDone"
         android:layout_marginRight="100dp"
         android:textColor="@android:color/black"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/botonDone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hecho"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:onClick="borrarTarea"
-        android:background="@color/colorAccent"
-        android:alpha="0.7"
-        android:textColor="@android:color/white"/>
+        android:scaleType="fitXY"
+        android:src="@mipmap/check3"
+        android:background="@android:color/transparent"
+        />
 
 </RelativeLayout>
