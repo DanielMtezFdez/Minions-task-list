@@ -47,7 +47,7 @@ public class Splash extends AppCompatActivity  implements Animation.AnimationLis
 
     @Override
     public void onAnimationEnd(Animation animation) {
-        Intent intent = new Intent(this, Login.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
