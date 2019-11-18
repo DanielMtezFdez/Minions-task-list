@@ -23,7 +23,7 @@
         android:layout_alignParentRight="true"
         android:onClick="borrarTarea"
         android:scaleType="fitXY"
-        android:src="@mipmap/check3"
+        android:src="@mipmap/check_azul"
         android:background="@android:color/transparent"
         />
 
