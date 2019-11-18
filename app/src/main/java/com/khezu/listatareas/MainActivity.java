@@ -3,10 +3,14 @@ package com.khezu.listatareas;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,7 +40,11 @@ public class MainActivity extends AppCompatActivity {
         controladorDB = new ControladorDB(this);
         listViewTareas = (ListView) findViewById(R.id.listaTareas);
 
+        this.setTitle(R.string.app_name);
 
+        SpannableString s = new SpannableString("Lista de tareas");
+        s.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.colorAccent, this.getTheme())), 0, s.length(), 0);
+        this.setTitle(s);
 
         actualizarUI();
     }
