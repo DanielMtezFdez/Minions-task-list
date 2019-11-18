@@ -73,3 +73,5 @@ fastlane/readme.md
 /captures
 .externalNativeBuild
 .idea/
+build.gradle
+gradle/
